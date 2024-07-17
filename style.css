@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#container {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.panel {
+  box-sizing: border-box;
+  outline: 1px solid black;
+}
+
+.black {
+  background-color: black;
+}
+
+button {
+  border: none;
+  background-color: burlywood;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
