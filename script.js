@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const btnClear = document.querySelector("#clear-sketch");
 const btnResize = document.querySelector("#resize-sketch");
+const btnToggleOutline = document.querySelector("#toggle-outline");
 let toggle = false;
 
 container.addEventListener("click", () => {
@@ -9,7 +10,15 @@ container.addEventListener("click", () => {
 });
 
 btnClear.addEventListener("click", removeTint);
-btnResize.addEventListener("click", changePanelSize);
+btnResize.addEventListener("click", resizeSkecth);
+btnToggleOutline.addEventListener("click", () => {
+  const divs = document.querySelectorAll("#container div");
+
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].classList.toggle("outline");
+  }
+});
+
 generatePanel(16);
 
 function changeBackgroundColor() {
@@ -47,8 +56,11 @@ function removePanel() {
   }
 }
 
-function changePanelSize() {
-  const size = prompt("Enter the size you want");
+function resizeSkecth() {
+  const size = prompt("Enter the size you want (16-100):");
+
+  if (size > 100 || size < 16)
+    return alert("Please enter the size you want between 16 to 100");
 
   if (size) {
     removePanel();

@@ -3,9 +3,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(180deg, #7950f2 5%, #f783ac 95%) no-repeat;
+  min-height: 100vh;
 }
 
 #container {
+  background-color: whitesmoke;
   display: flex;
   width: 500px;
   flex-wrap: wrap;
@@ -20,6 +23,9 @@ body {
 
 .panel {
   box-sizing: border-box;
+}
+
+.outline {
   outline: 1px solid black;
 }
 
@@ -29,7 +35,9 @@ body {
 
 button {
   border: none;
-  background-color: burlywood;
+  background-color: #f783ac;
+  font-weight: 800;
+  color: white;
   padding: 5px 20px;
   margin-bottom: 20px;
   border-radius: 5px;
